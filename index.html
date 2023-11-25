@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<!--    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' ">-->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <title>FileCut</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <script defer src="./js/logic.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>CutFile</h1>
+    <h4>Separate your files in simple steps</h4>
+<!--
+   form start
+   -->
+    <div class="checkbox">
+        <input type="checkbox" id="header-row" placeholder="file">
+        <label for="header-row">The first line is the header</label>
+    </div>
+    <div class="file-cut">
+        <label for="cut-size">Slice:</label>
+        <input type="number"
+               id="cut-size"
+               min="1"
+               step="1"
+               inputmode="numeric"
+               value="10"
+               required
+        >
+        <span class="validity"></span>
+    </div>
+    <div class="pattern-file-output">
+        <label for="pattern">Output file names:</label>
+        <input type="text"
+               id="pattern"
+               placeholder="example: file_[##] or data_01. Default: slice## or slice01."
+               inputmode="numeric"
+               required
+        >
+        <span class="validity"></span>
+    </div>
+    <div class="file-upload">
+        <label for="file">Upload a File (xlsx/csv):</label>
+        <button id="input-btn" onclick="getFile('file')" class="button-13" role="button">Select file</button>
+        <div style='height: 0;width: 0; overflow:hidden;display: none;'>
+            <input id="file" type="file" onchange="chargeFile(this)" accept=".xlsx, .csv, .txt"/>
+        </div>
+        <!--        <span class="validity"></span>-->
+    </div>
+    <button id="upload-button"  class="button-15" role="button" onclick="process()">▶ Process it</button>
+
+    <!--
+    form end
+    -->
+
+    <!--
+     config start
+     -->
+    <div id="menu" class="hidden">
+        <button id="output-file-btn" onclick="getFile('directory')" class="button-13" role="button">Output directory</button>
+        <div style='height: 0;width: 0; overflow:hidden;display: none;'>
+            <input id="directory" type="file" placeholder="Output folder" onchange="getDirectory()" webkitdirectory directory>
+        </div>
+    </div>
+
+    <button id="toggleButton">⚙️</button>
+    <div id="snackbar">Output file saved</div>
+    <div id="snackbarError">Error saving the folder</div>
+    <div id="snackbarResult">Done</div>
+    <div id="snackbarResultError">Error in the process</div>
+    <!--
+     config end
+     -->
+</div>
+</body>
+</html>
+
+

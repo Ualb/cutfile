@@ -1,0 +1,433 @@
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: 'titleFont';
+    src: url('/Users/macbookm1/Documents/Git/cutfile/fonts/UnderStation.woff') format('woff');
+}
+
+/*title font*/
+
+.container {
+    max-width: 600px;
+    margin: 10% auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-family: 'titleFont', sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+select,
+input[type="file"],
+input[type="text"],
+input[type="number"] {
+    width: 95%;
+    padding: 10px;
+    /*margin-bottom: 15px;*/
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.checkbox label {
+    margin-left: 10px;
+    color: #555;
+    /*padding-top: 5px;*/
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    font-size: 11px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+input:invalid + span:after {
+    content: "✖";
+    padding-left: 5px;
+}
+
+input:valid + span:after {
+    content: "✓";
+    padding-left: 5px;
+}
+
+
+.pattern-file-output {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 10px;
+}
+
+.pattern-file-output label {
+    flex: 0 0 auto; /* No se estira y mantiene el tamaño original */
+    margin-right: 10px; /* Espacio entre el label y el input */
+}
+
+.input-container {
+    flex: 1; /* Se expande para ocupar el espacio restante */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+}
+
+.input-container input {
+    flex: 1; /* Se expande para ocupar el espacio restante */
+    margin-top: 15px;
+}
+
+
+.file-cut {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 10px;
+}
+
+.file-cut label {
+    flex: 0 0 auto; /* No se estira y mantiene el tamaño original */
+    margin-right: 10px; /* Espacio entre el label y el input */
+    padding-top: 0px;
+}
+
+.input-container {
+    flex: 1; /* Se expande para ocupar el espacio restante */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+}
+
+.input-container input {
+    flex: 1; /* Se expande para ocupar el espacio restante */
+}
+
+
+/* Estilo para el menú */
+#menu {
+    width: 160px;
+    background-color: #f0f0f0;
+    height: 40px   ;
+    /*padding: 5px;*/
+    position: absolute;
+    top: 10px;
+    left: -220px; /* Oculta el menú fuera del área visible */
+    transition: left 0.3s ease-in-out; /* Transición suave para el cambio de posición */
+}
+
+#menu p {
+    margin-left: 10px;
+}
+
+/* Estilo para el botón de mostrar/ocultar */
+#toggleButton {
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Establece una posición absoluta para el div */
+    bottom: 0; /* Lo coloca en la parte inferior del contenedor */
+    right: 0; /* Lo coloca en el lado derecho del contenedor */
+}
+
+/* Estilo para ocultar el menú */
+.hidden {
+    left: -220px; /* Asegura que el menú esté oculto inicialmente */
+}
+
+/* Agrega un estilo cuando el menú se muestra */
+#menu:not(.hidden) {
+    left: 0;
+}
+
+#menu #output-file-btn {
+    margin-left: 10px;
+}
+
+
+/*#input-btn {*/
+/*    -webkit-border-radius: 5px;*/
+/*    -moz-border-radius: 5px;*/
+/*    border: 1px dashed #BBB;*/
+/*    text-align: center;*/
+/*    background-color: #DDD;*/
+/*    cursor: pointer;*/
+/*}*/
+
+label {
+    font-size: 13px;
+}
+
+
+/* CSS */
+.button-13 {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 12px;
+    line-height: 29px;
+    padding: 0 25px 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    /*width: 100px;*/
+}
+
+.button-13:hover {
+    background-color: #f7fafa;
+}
+
+.button-13:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+
+
+.file-upload {
+    display: flex;
+    margin-bottom: 15px;
+}
+.file-upload label {
+    padding-top: 8px;
+    margin-right: 10px;
+}
+
+/* CSS */
+.button-15 {
+    background-image: linear-gradient(#42A1EC, #0070C9);
+    border: 1px solid #0077CC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 30px;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.button-15:disabled {
+    cursor: default;
+    opacity: .3;
+}
+
+.button-15:hover {
+    background-image: linear-gradient(#51A9EE, #147BCD);
+    border-color: #1482D0;
+    text-decoration: none;
+}
+
+.button-15:active {
+    background-image: linear-gradient(#3D94D9, #0067B9);
+    border-color: #006DBC;
+    outline: none;
+}
+
+.button-15:focus {
+    box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+    outline: none;
+}
+
+
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #D1E7DD;
+    border: 1px solid #747678;
+    color: #3D7258; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 5px; /* Rounded borders */
+    padding: 10px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+#snackbarResult {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #D1E7DD;
+    border: 1px solid #747678;
+    color: #3D7258; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 5px; /* Rounded borders */
+    padding: 10px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+#snackbarError {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #F2DEDE;
+    border: 1px solid #747678;
+    color: #A94442; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 5px; /* Rounded borders */
+    padding: 10px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+#snackbarResultError {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #F2DEDE;
+    border: 1px solid #747678;
+    color: #A94442; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 5px; /* Rounded borders */
+    padding: 10px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbarResult.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbarError.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#snackbarResultError.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
+/*!* loader *!*/
+/*#loaderDiv {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background-color: rgba(0, 0, 0, 0.5); !* Fondo semitransparente *!*/
+/*    z-index: 999; !* Asegura que el div se superponga a otros elementos *!*/
+/*    visibility: hidden;*/
+/*}*/
+
+/*.loader {*/
+/*    border: 16px solid #f3f3f3; !* Light grey *!*/
+/*    border-top: 16px solid #3498db; !* Blue *!*/
+/*    border-radius: 50%;*/
+/*    width: 120px;*/
+/*    height: 120px;*/
+/*    animation: spin 2s linear infinite;*/
+/*}*/
+
+/*@keyframes spin {*/
+/*    0% { transform: rotate(0deg); }*/
+/*    100% { transform: rotate(360deg); }*/
+/*}*/
+
+/*#loaderDiv .show {*/
+/*    visibility: visible; !* Show the loader *!*/
+/*}*/

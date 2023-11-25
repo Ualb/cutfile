@@ -1,0 +1,23 @@
+{
+  "name": "FileCut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Ulises Lopez",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^26.2.0"
+  },
+  "dependencies": {
+    "csv": "^6.3.3",
+    "csv-parser": "^3.0.0",
+    "exceljs": "^4.3.0",
+    "fast-csv": "^4.3.6",
+    "fs": "^0.0.1-security"
+  }
+}
